@@ -42,4 +42,6 @@ user_groups:
 - Visitors
 ---
 
-I am a postdoctoral researcher in Dr. Whendee Silver’s lab at University of California, Berkeley. My research interests include soil carbon persistence and decomposition, coupled carbon-nutrient cycling in terrestrial ecosystems, redox dynamics in upland soils, and biogeochemical implications of climate change and land use. My field sites spans a wide range of ecosystems, including arid grassland, sub-tropical forests, and agricultural landscapes. I take a variety of analytical approaches to characterize the physical, chemical, and biological properties of plant, soil, and water samples.
+I am a postdoctoral researcher in Dr. Whendee Silver’s lab at University of California, Berkeley. My research interests include soil carbon persistence and decomposition, coupled carbon-nutrient cycling in terrestrial ecosystems, redox dynamics in upland soils, and biogeochemical implications of climate change and land use. My field sites spans a wide range of ecosystems, including arid grasslands, sub-tropical forests, and agricultural landscapes. I take a variety of analytical approaches to characterize the physical, chemical, and biological properties of plant, soil, and water samples.
+
+***Update*** Sep. 2019: I will join the Soil and Water Sciences Department at the University of Florida in Jan. 2020. I am looking for MSc and PhD students interested in soil carbon and soil health. Get in touch with me via email and twitter for information on the application! Ads and mentoring approach will be added soon. 
