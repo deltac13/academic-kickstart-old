@@ -41,6 +41,7 @@ user_groups:
 - Researchers
 - Visitors
 ---
+**Principle Investigator**
 
 I am a postdoctoral researcher in Dr. Whendee Silver’s lab at University of California, Berkeley. My research interests include soil carbon persistence and decomposition, coupled carbon-nutrient cycling in terrestrial ecosystems, redox dynamics in upland soils, and biogeochemical implications of climate change and land use. My field sites spans a wide range of ecosystems, including arid grasslands, sub-tropical forests, and agricultural landscapes. I take a variety of analytical approaches to characterize the physical, chemical, and biological properties of plant, soil, and water samples.
 
