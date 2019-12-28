@@ -58,9 +58,9 @@ time_format = "3:04 PM"
 ############################
 
 # Enter contact details (optional). To hide a field, clear it to "".
-email = "yanglin@berkeley.edu"
+email = "ylin2@ufl.edu"
 phone = ""
-address = "140 Hilgard Hall, University of California, Berkeley 94720"
+address = "2181 McCarty Hall, PO Box 110290, University of Florida, Gainesville, Florida 32611"
 
 # Office hours: use `<br>` to insert a line break, or set to "" to remove office hours
 office_hours = ""

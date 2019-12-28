@@ -18,11 +18,11 @@ hero_media = ""
 
   # Background color.
    color = "#005b96"
-  
+
   # Background gradient.
   # gradient_start = "#4bb4e3"
   # gradient_end = "#2b94c3"
-  
+
   # Background image.
   # image = ""  # Name of image in `static/img/`.
   # image_darken = 0.6  # Darken the image? Range 0-1 where 0 is transparent and 1 is opaque.
@@ -35,6 +35,6 @@ hero_media = ""
 #   Remove a link/note by deleting a cta/note block.
 +++
 
-Human society cannot survive without productive, healthy, and sustainable soil as a resource. The overall goal of the Lin Lab is to advance the understanding of soil as a complex system to promote environmental sustainability.
+Human society cannot survive without productive, healthy, and sustainable soil. Our overall goal is to advance the understanding of soil as a complex system to promote environmental sustainability.
 
 We are part of the Soil and Water Sciences Department at the University of Florida. Our team is small but fast-growing. We are looking for interested individuals to join our team.
