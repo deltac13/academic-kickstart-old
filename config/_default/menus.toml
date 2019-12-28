@@ -7,7 +7,13 @@
 #[[main]]
 #  name = "Posts"
 #  url = "#posts"
-#  weight = 20
+#  weight = 10
+
+[[main]]
+  name = "Opportunities"
+  url = "#opportunities"
+  weight = 20
+
 
 #[[main]]
 #  name = "Projects"
