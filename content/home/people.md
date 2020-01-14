@@ -12,6 +12,6 @@ subtitle = ""
 #   Edit each user's `user_groups` to add them to one or more of these groups.
 # "Principal Investigator", "Researchers", "Grad Students", "Administration", "Visitors","Alumni"
 
-user_groups = ["Principal Investigator",
+user_groups = ["Principal Investigator","Grad Students",
                "Visitors"]
 +++
