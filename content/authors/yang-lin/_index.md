@@ -20,9 +20,9 @@ interests:
 - Applied Statistics
 name: Yang Lin
 organizations:
-- name: University of California, Berkeley
+- name: University of Florida
   url: ""
-role: Postdoctoral researcher
+role: Assistant Professor
 social:
 - icon: envelope
   icon_pack: fas
@@ -38,11 +38,11 @@ social:
   link: https://github.com/deltac13
 superuser: true
 user_groups:
-- Researchers
-- Visitors
+- "Principal Investigator"
 ---
-**Principle Investigator**
 
-I am a postdoctoral researcher in Dr. Whendee Silver’s lab at University of California, Berkeley. My research interests include soil carbon persistence and decomposition, coupled carbon-nutrient cycling in terrestrial ecosystems, redox dynamics in upland soils, and biogeochemical implications of climate change and land use. My field sites spans a wide range of ecosystems, including arid grasslands, sub-tropical forests, and agricultural landscapes. I take a variety of analytical approaches to characterize the physical, chemical, and biological properties of plant, soil, and water samples.
+### Principle Investigator
 
-***Update*** Sep. 2019: I will join the Soil and Water Sciences Department at the University of Florida in Jan. 2020. I am looking for MSc and PhD students interested in soil carbon and soil health. Get in touch with me via email and twitter for information on the application! Ads and mentoring approach will be added soon. 
+I am an assistant professor in the Soil and Water Sciences Department at the University of Florida. My research interests include soil carbon persistence and decomposition, coupled carbon-nutrient cycling in terrestrial ecosystems, redox dynamics in upland soils, and biogeochemical implications of climate change and land use. My field sites spans a wide range of ecosystems, including arid grasslands, sub-tropical forests, and agricultural landscapes. I take a variety of analytical approaches to characterize the physical, chemical, and biological properties of plant, soil, and water samples.
+
+I am looking for MSc and PhD students interested in soil carbon and soil health.  Check out [Opportunities](#opportunities)  for more information on the application! Get in touch with me via email and twitter!

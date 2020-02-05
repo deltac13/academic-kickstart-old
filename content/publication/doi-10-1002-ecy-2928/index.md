@@ -1,6 +1,6 @@
 ---
 title: "The role of soil redox conditions in microbial phosphorus cycling in humid tropical forests"
-date: 2019-01-01
+date: 2020-02-01
 publishDate: 2019-12-03T23:32:55.542748Z
 authors: ["Avner Gross", "Yang Lin", "Peter K. Weber", "Jennifer Pett-Ridge", "Whendee L. Silver"]
 publication_types: ["2"]
