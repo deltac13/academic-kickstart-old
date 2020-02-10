@@ -1,5 +1,5 @@
 ---
-title: "FTICRMS data analysis with ftmsRanalysis"
+title: "FTICR-MS data analysis with ftmsRanalysis"
 author: "Yang Lin"
 date: "`r Sys.Date()`"
 output: 
@@ -12,11 +12,11 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 # Background
-Fourier-transform ion cyclotron resonance mass spectrometry (FT-ICR-MS) is an exciting technique that enables soil scientists to acquire detailed information of soil organic matter. Processing FT-ICR-MS data, however, is not straightforward. Luckily, scientists at the Environmental Molecular Sciences Laboratory (EMSL) have developed a R package `ftmsRanalysis` that make FT-ICR-MS data processing and visualization more feasible than ever before. 
+Fourier-transform ion cyclotron resonance mass spectrometry (FTICR-MS) is an exciting technique that enables scientists to acquire detailed information of soil organic matter. Processing FTICR-MS data, however, is not straightforward. Luckily, folks at the Environmental Molecular Sciences Laboratory (EMSL) have developed a R package `ftmsRanalysis` that makes FTICR-MS data processing and visualization more feasible than ever before. 
 
-[A tutorial](https://emsl-computing.github.io/ftmsRanalysis/articles/ftmsRanalysis.html) of the `ftmsRanalysis` package offers very valuable information on how to get started. Several vignettes on data visualization can also be found on [here](https://emsl-computing.github.io/ftmsRanalysis/index.html). The package also enables other cool analyses that have not been reflected by these vignettes, such as ordination and group comparison. 
+[A tutorial](https://emsl-computing.github.io/ftmsRanalysis/articles/ftmsRanalysis.html) of the `ftmsRanalysis` package offers very valuable information on how to get started. Several vignettes on data visualization can also be found on [here](https://emsl-computing.github.io/ftmsRanalysis/index.html). The package also enables other cool analyses that weren't discussed by these vignettes, such as ordination and group comparison. 
 
-In this blog, I will show how to perform a non-metric multidimensional scaling (NMDS) and plot the results. I will also show how to compare the nominal oxidation state of carbon (NOSC) between two treatments. 
+In this blog, I will show how to perform a non-metric multidimensional scaling (NMDS) and plot the results. I will also show how to compare the nominal oxidation state of carbon (NOSC) between treatments. 
 
 Most of the scripts in this demo were provided to me by the amazing Allison Thompson at EMSL with some modifications. 
 
@@ -31,11 +31,11 @@ For this demo, I will use the example dataset included with the `ftmsRanalysis` 
 
 There are three data tables that are essential to the analysis: 
 
-1. **Expression Data**, the values here correspond to the peak intensity measured by the MS. Columns represent individual samples (i.e., extractant). Rows indicate the chemical compounds (or peaks) detected by the MS. This example dataset includes 20 samples, and in total, over 24,400 types of compounds are detected . 
+1. **Expression Data**, the values here correspond to the peak intensity measured by the MS. Columns represent individual samples (i.e., extractant). Rows indicate the chemical compounds (or peaks) detected by the MS. This example dataset includes 20 samples, and over 24,400 types of peaks. 
 
 2. **Sample Data** include the meta-data characterizing the experimental design. For example, there are columns indicating the location (M and W), crop flora (C and S), and experimental blocks (1-5). 
 
-3. **Molecular Identification Data** include stoichiometry information of the detected compounds. Columns correspond to the elements (e.g., carbon, hydrogen, nitrogen, etc.). In some cases, these data columns may be found together with 1. Expression Data. 
+3. **Molecular Identification Data** include stoichiometry information of the detected compounds. Columns correspond to the elements (e.g., carbon, hydrogen, nitrogen, etc.). In some cases, these data columns may be stored together with Expression Data. 
 
 ## e_data (Expression Data)
 ```{r }
@@ -67,13 +67,13 @@ peakObj <- as.peakData(ftms12T_edata, ftms12T_fdata, ftms12T_emeta,
                        isotopic_notation = "1")
 peakObj
 ```
-No surprise, the 'peakData' object contains three elements, i.e., e_data, f_data, and e_meta:
+Not surprisingly, the 'peakData' object contains three elements, i.e., e_data, f_data, and e_meta:
 ```{r}
 names(peakObj)
 ```
 
 # Data preprocessing
-I apply three fitlers here. The first removes any peak outside of the range 200-900 m/z. The second removes any peak that is only seen in one sample. The third removes any peak that is’t assigned to a formula (remaining analyses all require a formula).
+I apply three filters here. The first removes any peak outside of the range 200-900 m/z. The second removes any peak that is only seen in one sample. The third removes any peak that isn’t assigned to a formula (remaining analyses all require a formula).
 
 ```{r}
 # filter data to have mass between 200 and 900 #
@@ -116,7 +116,7 @@ library(vegan)
 peak.nmds <- metaMDS(t(as.matrix(peakObj.pa$e_data[,-1])), distance="jaccard", autotransform=FALSE)
 
 ```
-I create a new column in the f_data table called 'treatment'. It will help us examine the interactive effects of location and crop flora. 
+I create a new column in the f_data table called 'treatment' by merging the two treatments: location and crop flora. It will help us examine their interactive effects. 
 ```{r}
 peakObj$f_data$treatment <- paste(peakObj$f_data$Location,peakObj$f_data$Crop.Flora)
 peakObj.pa$f_data$treatment <- paste(peakObj.pa$f_data$Location,peakObj.pa$f_data$Crop.Flora)
@@ -151,7 +151,8 @@ apply(peakObj$e_meta[,-c(1:11)], 2, function(x) quantile(x, na.rm=TRUE))
 
 ```
 
-For now, NOSC values are stored in e_meta table. A new datatable called `nosc` is created by merging e_meta with f_data. I am also interested in extracting the compound classes of peaks. I am using the class boundary definitions as in Kim et al. (2003). 
+For now, NOSC values are stored in the e_meta table. A new data table called `nosc` is created by merging e_meta with f_data. I am also interested in extracting the compound classes of peaks. I am using the class boundary definitions as in Kim et al. (2003). 
+
 * `bs1` - [Kim, S., et al (2003). Analytical Chemistry.](https://dx.doi.org/10.1021/ac034415p){target="_blank"}
 
 
@@ -186,7 +187,7 @@ nosc_p <- ggplot(data = nosc.mean, aes(x=treatment, y=Mean, colour=treatment)) +
 plotly::ggplotly(nosc_p)
 ```
 
-Analysis of variance (ANOVA) can be used to evaluate treatment effects on NOSC. Results suggest that Crop Flora had a significant effect on NOSC, while Location did not. 
+Analysis of variance (ANOVA) can be used to evaluate treatment effects on mean NOSC. Results suggest that Crop Flora had a significant effect on NOSC, while Location did not. 
 ```{r}
 lm <- lm(Mean ~ Location*Crop.Flora, data=nosc.mean)
 summary(lm)
